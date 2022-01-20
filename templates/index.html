@@ -20,32 +20,32 @@
         <p class="hero__title">Certificate Details :</p>
         <ul class="header__list">
           <li class="list__item">
-            <span class="item__text">Name:</span> AZIMOV  ABDULLOKH  	 	 	    
+            <span class="item__text">Name:</span> {{ person.name }}	 	 	    
           <li class="list__item">
-            <span class="item__text">Birth date :</span> 11-12-1997
+            <span class="item__text">Birth date :</span> {{ person.birth_date }}
           </li>
           <li class="list__item">
-            <span class="item__text">Mobile : </span> +966579851472
+            <span class="item__text">Mobile : </span> {{ person.mobile }}
           <li class="list__item">
-            <span class="item__text">Nationality : </span> REPUBLIC OF UZBEKISTAN	  
+            <span class="item__text">Nationality : </span> {{ person.nationality }}
           </li>
           <li class="list__item">
-            <span class="item__text">Identification Type :</span> Passport
+            <span class="item__text">Identification Type :</span> {{ person.identification_type }}
           </li>
           <li class="list__item">
-            <span class="item__text">Identification ID:</span> AA3672857				
+            <span class="item__text">Identification ID:</span> {{ person.identification_id }}
           </li>
           <li class="list__item">
-            <span class="item__text">Gender :</span>  Male
+            <span class="item__text">Gender :</span>  {{ person.gender }}
           </li>
         </ul>
       </div>
       <div class="hero__content ">
         <ul class="header__list">
           <li class="list__item">
-            <span class="item__text">Result Time</span>: 2021-12-28    10:29:37
+            <span class="item__text">Result Time</span>: {{ result.result_time }}
           </li>
-          <li class="list__item"><span class="item__text">Result :</span> <span class="item__text__span">Negative</span> </li>
+          <li class="list__item"><span class="item__text">Result :</span> <span class="item__text__span">{{ person.result }}</span> </li>
           <li class="list__item"><span class="item__text">Time left</li>
       </div>
       <div class="hero__bottom">
