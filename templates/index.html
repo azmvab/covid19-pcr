@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <title>TestCorona | Log in</title>
   </head>
   <body>
@@ -13,7 +13,7 @@
         <h2 class="header__title">
           <a href="/"> Medical Laboratory Report </a>
         </h2>
-        <img class="header__logo__img" src="./img/logos.png" alt="" />
+        <img class="header__logo__img" src="{% static 'img/logos.png' %}" alt="" />
       </div>
       <div class="hero__content">
         <p class="hero__title">Certificate Details :</p>
@@ -79,12 +79,12 @@
           <h2  class="header__title">
             <a href="https://blazma.com/?lang=en" target="_blank">Powered by Blazma</a>
           </h2>
-          <img class="footer__img" src="./img/blazma.png" alt="">
+          <img class="footer__img" src="{% static 'img/blazma.png' %}" alt="">
         </div>
       </div>
     </section>
 
 
-    <script src="./script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>
