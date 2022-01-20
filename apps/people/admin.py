@@ -7,4 +7,4 @@ class PersonAdmin(admin.ModelAdmin):
     search_fields = ('name', )
 
 
-admin.site.register(Person, PersonCAdmin)
+admin.site.register(Person, PersonAdmin)
