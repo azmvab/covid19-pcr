@@ -15,6 +15,6 @@ admin.site.index_title = _('Site administration')
 urlpatterns = [
     url(r'^$', Index.as_view(), name='index'),
     url(r'^admin/', admin.site.urls),
-    url(r'^people/', include('apps.people.urls', namespace='people')),
+    url(r'^people/', include(('apps.people.urls', 'people'))),
 
 ]
