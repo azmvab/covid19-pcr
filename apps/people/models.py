@@ -1,6 +1,9 @@
 from uuid import uuid4
+
 from django.db import models
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
+
 from .mixins import TimeStampModel
 
 
@@ -48,10 +51,12 @@ class Person(TimeStampModel):
         max_length=32
     )
 
-
-    def __str__(self):
-        return self.name
-
     class Meta:
         verbose_name = _("Person")
         verbose_name_plural = _("People")
+
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return reverse("people:people-detail", kwargs={"slug": self.guid})
