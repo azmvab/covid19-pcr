@@ -36,7 +36,7 @@ function getTimeRemaining(endtime) {
 	updateClock();
 	var timeinterval = setInterval(updateClock, 1000);
   }
-  
-  var deadline = new Date(Date.parse(new Date()) + 2 * 59 * 54 * 35 * 1000);
+  var result_time = document.getElementById("result_time");
+  var deadline = new Date(Date.parse(result_time.textContent) + 2 * 59 * 54 * 35 * 1000);
   initializeClock("clockdiv", deadline);
   

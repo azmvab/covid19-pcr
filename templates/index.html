@@ -43,7 +43,7 @@
       <div class="hero__content ">
         <ul class="header__list">
           <li class="list__item">
-            <span class="item__text">Result Time</span>: {{ person.result_time|date:"Y-m-d H:i:s" }}
+            <span class="item__text">Result Time</span>: <div id="result_time">{{ person.result_time|date:"Y-m-d H:i:s" }}</div>
           </li>
           <li class="list__item"><span class="item__text">Result :</span> <span class="item__text__span">{{ person.result }}</span> </li>
           <li class="list__item"><span class="item__text">Time left</li>
