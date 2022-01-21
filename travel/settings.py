@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     # django apps
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -45,8 +44,6 @@ INSTALLED_APPS = [
     # internal apps
     'apps.people',
 ]
-
-SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
