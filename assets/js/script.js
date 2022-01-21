@@ -38,6 +38,6 @@ function getTimeRemaining(endtime) {
   }
   var result_time = document.getElementById("result_time");
   var result_date = Date.parse(result_time.innerHTML.split(" ")[0]);
-  var deadline = new Date(result_date + 2 * 23 * 60 * 60 * 1000);
+  var deadline = new Date(result_date + 3 * 23 * 60 * 60 * 1000);
   initializeClock("clockdiv", deadline);
   
