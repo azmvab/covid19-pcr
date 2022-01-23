@@ -3,7 +3,7 @@ from .models import Person
 
 
 class PersonAdmin(admin.ModelAdmin):
-    list_display = ('guid', 'name')
+    list_display = ('name', "birthday")
     search_fields = ('name', )
 
 
