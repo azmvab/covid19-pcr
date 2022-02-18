@@ -6,8 +6,8 @@ from .models import Person
 
 
 class PersonAdmin(admin.ModelAdmin):
-    list_display = ('guid', 'name', "get_absolute_url", "get_absolute_img_url")
-    list_display_links = ('guid', 'name', )
+    list_display = ('name', "birthday", "get_absolute_url", "get_absolute_img_url")
+    list_display_links = ('name', 'birthday')
     search_fields = ('name', )
 
     def get_absolute_url(self, obj):
