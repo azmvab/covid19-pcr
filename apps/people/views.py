@@ -20,7 +20,7 @@ class PeopleImageView(generic.DetailView):
     queryset = Person.objects.all()
 
     def get(self, request, *args, **kwargs):
-        self.object = self.get_object()
+        self.object.collection_time.strftime('%Y-%m-%d %H:%M')
 
         img = Image.open(os.path.join(settings.MEDIA_ROOT, "layer.jpg"), mode='r')
         draw = ImageDraw.Draw(img)
