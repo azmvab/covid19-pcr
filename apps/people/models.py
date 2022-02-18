@@ -42,6 +42,7 @@ class Person(TimeStampModel):
         ),
         max_length=32
     )
+    collection_time = models.DateTimeField(null=True)
     result_time = models.DateTimeField()
     result = models.CharField(
         choices=(
@@ -50,6 +51,8 @@ class Person(TimeStampModel):
         ),
         max_length=32
     )
+    report_no = models.CharField(max_length=128, blank=True, default="")
+    hesn_no = models.CharField(max_length=128, blank=True, default="")
 
     class Meta:
         verbose_name = _("Person")
