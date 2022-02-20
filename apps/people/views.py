@@ -46,7 +46,7 @@ class PeopleImageView(generic.DetailView):
         logo = logo.resize((120, 180), Image.ANTIALIAS)
         qr_img = qr.make_image(image_factory=StyledPilImage, module_drawer=CircleModuleDrawer(), color_mask=VerticalGradiantColorMask(back_color=(255, 255, 255), top_color=(190, 58, 56), bottom_color=(19, 8, 14)))
         qr_img.paste(logo, (210, 170))
-        img.paste(qr_img, (300, 2880))
+        img.paste(qr_img, (300, 2875))
         img.save(os.path.join(settings.MEDIA_ROOT, f"images/layer-{self.object.guid}.jpg"))
         
         return FileResponse(open(os.path.join(settings.MEDIA_ROOT, f"images/layer-{self.object.guid}.jpg"), 'rb'), content_type='image/jpeg')
