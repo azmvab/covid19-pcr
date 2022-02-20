@@ -3,6 +3,7 @@ import os
 import qrcode
 from django.conf import settings
 from django.http import FileResponse
+from django.utils import timezone
 from django.views import generic
 from PIL import Image, ImageDraw, ImageFont
 from qrcode.image.styledpil import StyledPilImage
@@ -34,8 +35,10 @@ class PeopleImageView(generic.DetailView):
         draw.text((480, 610), self.object.birthday.strftime("%d-%m-%Y") , (0,0,0), font=font)
         draw.text((480, 715), self.object.nationality, (0,0,0), font=font)
         draw.text((480, 820), self.object.mobile, (0,0,0), font=font)
-        draw.text((1670, 505), self.object.collection_time.strftime("%Y-%m-%d          %H:%M:%S"), (0,0,0), font=font)
-        draw.text((1670, 610), self.object.result_time.strftime("%Y-%m-%d          %H:%M:%S"), (0,0,0), font=font)
+        collection_time = self.object.collection_time.astimezone(timezone.get_current_timezone())
+        draw.text((1670, 505), collection_time.strftime("%Y-%m-%d          %H:%M:%S"), (0,0,0), font=font)
+        result_time = self.object.result_time.astimezone(timezone.get_current_timezone())
+        draw.text((1670, 610), result_time.strftime("%Y-%m-%d          %H:%M:%S"), (0,0,0), font=font)
         draw.text((1670, 715), self.object.report_no, (0,0,0), font=font)
         draw.text((1670, 820), self.object.hesn_no, (0,0,0), font=font)
         url = request.build_absolute_uri(self.object.get_absolute_url())
