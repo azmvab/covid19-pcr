@@ -1,5 +1,6 @@
 from uuid import uuid4
 
+from django.conf import settings
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
@@ -8,6 +9,12 @@ from .mixins import TimeStampModel
 
 
 class Person(TimeStampModel):
+    added_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="people_added_by",
+        verbose_name=_("Added by"),
+    )
     guid = models.UUIDField(
         verbose_name=_("UUID"),
         default=uuid4,
