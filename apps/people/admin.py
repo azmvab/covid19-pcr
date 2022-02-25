@@ -33,7 +33,7 @@ class PersonAdmin(admin.ModelAdmin):
         ret = super().has_view_or_change_permission(request, obj)
 
         if obj is not None:
-            return ret and obj.added_by == request.user
+            return ret and (obj.added_by == request.user or request.user.is_superuser)
         return ret
 
 
