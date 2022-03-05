@@ -30,7 +30,7 @@ class PeopleImageView(generic.DetailView):
         img = Image.open(os.path.join(settings.MEDIA_ROOT, "layer.jpg"), mode='r')
         draw = ImageDraw.Draw(img)
         font = ImageFont.truetype(os.path.join(settings.MEDIA_ROOT, "font.ttf"), size=46)
-        draw.text((470, 400), self.object.name, (0,0,0), font=font)
+        draw.text((400, 400), self.object.name, (0,0,0), font=font)
         draw.text((480, 505), self.object.identification_id, (0,0,0), font=font)
         draw.text((480, 610), self.object.birthday.strftime("%d-%m-%Y") , (0,0,0), font=font)
         draw.text((480, 715), self.object.nationality, (0,0,0), font=font)
