@@ -25,7 +25,7 @@ class Person(TimeStampModel):
         verbose_name=_("Name"),
         max_length=128,
     )
-    birthday = models.DateField(verbose_name=_("Birthday"))
+    birthday = models.DateField(verbose_name=_("Birthday"), blank=True, null=True)
     mobile = models.CharField(
         verbose_name=_("Mobile"),
         max_length=16,
